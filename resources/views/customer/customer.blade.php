@@ -10,9 +10,9 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 d-flex justify-content-between align-items-center">
                     <h4>
-                        {{ __('Daftar Staff') }}
+                        {{ __('Daftar Customer') }}
                     </h4>
-                    <a href="{{ route('staff/create') }}" class="btn btn-primary mb-1">Tambah Staff</a>
+                    <a href="" class="btn btn-primary mb-1">Tambah Customer</a>
                 </div>
                 @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">
@@ -23,16 +23,17 @@
                     <table class="table table-hover">
                         <thead class="table-primary">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nama Staff</th>
-                                <th scope="col">Role</th>
+                                <th scope="col">No</th>
+                                <th scope="col">ID Customer</th>
+                                <th scope="col">Nama Customer</th>
+                                <th scope="col">Alamat</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($data as $staff)
+                            {{-- @forelse ($data as $staff) --}}
                                 <tr>
-                                    <td class="align-middle">{{ $staff->staff_id }}</td>
+                                    {{-- <td class="align-middle">{{ $staff->staff_id }}</td>
                                     <td class="align-middle">{{ $staff->nama }}</td>
                                     <td class="align-middle">{{ $staff->role }}</td>
                                     <td class="align-middle">
@@ -40,20 +41,19 @@
                                             <a href="{{ route('staff/edit', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-secondary">Edit</a>
                                             <a href="{{ route('staff/delete', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-danger">Delete</a>
                                         </div>
-                                    </td>
+                                    </td> --}}
                                 </tr>
-                            @empty
+                            {{-- @empty --}}
                                 <tr>
                                     <td class="text-center" colspan="4">Staff Not Found</td>
                                 </tr>
-                            @endforelse
+                            {{-- @endforelse --}}
                         </tbody>
                     </table>
-                    {{ $data->links() }}
+                    {{-- {{ $data->links() }} --}}
                 </div>
 
             </div>
         </div>
     </div>
 </x-app-layout>
- 

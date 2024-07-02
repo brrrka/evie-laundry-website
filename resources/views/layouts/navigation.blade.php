@@ -22,13 +22,18 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" style="text-decoration: none;">
-                        {{ __('Dashboard') }}
+                    <x-nav-link :href="route('customer')" :active="request()->routeIs('customer')" style="text-decoration: none;">
+                        {{ __('Customer') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('staff')" :active="request()->routeIs('staff')" style="text-decoration: none;">
                         {{ __('Staff') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('layanan')" :active="request()->routeIs('layanan')" style="text-decoration: none;">
+                        {{ __('Layanan') }}
                     </x-nav-link>
                 </div>
             </div>
