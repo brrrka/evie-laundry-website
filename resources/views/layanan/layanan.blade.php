@@ -38,9 +38,8 @@
                                     <td class="align-middle">{{ $item->biaya }}</td>
                                     <td class="align-middle">{{ $item->satuan }}</td>
                                     <td class="align-middle">
-                                        <div class="btn-group" role="group" aria-label="Basic Example">
-                                            <a href="{{ route('staff/edit', ['id'=>$item->id_layanan]) }}" type="button" class="btn btn-secondary">Edit</a>
-                                            <a href="{{ route('staff/delete', ['id'=>$item->id_layanan]) }}" type="button" class="btn btn-danger">Delete</a>
+                                        <div class="btn-group" role="group" aria-label="Basic Example">     
+                                            <a href="{{ route('layanan.delete', ['id'=>$item->id_layanan]) }}" type="button" class="btn btn-danger">Delete</a>
                                         </div>
                                     </td>
                                 </tr>

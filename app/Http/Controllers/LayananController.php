@@ -27,4 +27,9 @@ class LayananController extends Controller
 
         return redirect (route('layanan'))->with('message', 'Layanan ditambahkan');
     }
+
+    public function delete($id){
+        $layanan = Layanan::findOrFail($id)->delete();
+        return redirect (route('layanan'));
+    }
 }

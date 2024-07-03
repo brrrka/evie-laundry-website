@@ -26,7 +26,9 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Nama Staff</th>
                                 <th scope="col">Role</th>
+                                {{-- @if(Auth::user()->staff_id == $staff->staff_id and $staff->role == 'admin'); --}}
                                 <th scope="col">Action</th>
+                                {{--        @endif --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -40,6 +42,7 @@
                                             <a href="{{ route('staff/edit', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-secondary">Edit</a>
                                             <a href="{{ route('staff/delete', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-danger">Delete</a>
                                         </div>
+                                        
                                     </td>
                                 </tr>
                             @empty

@@ -10,8 +10,8 @@ class StaffController extends Controller
 {
     public function staffpage(){
         $data = Staffs::orderBy('staff_id')->paginate(5);
-        $total = Staffs::count();
-        return view('staff.staff', compact(['data', 'total']));
+        $staff = Staffs::get();
+        return view('staff.staff', compact(['data', 'staff']));
     }
 
     public function create(){

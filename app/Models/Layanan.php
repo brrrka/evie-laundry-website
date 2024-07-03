@@ -20,4 +20,8 @@ class Layanan extends Model
         'satuan',
         'deskripsi'
     ];
+
+    public function transactiondetatil(){
+        return $this->hasMany(TransactionDetail::class, 'id_layanan', 'id_layanan');
+    }
 }

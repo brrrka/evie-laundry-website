@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id('no_pesanan');
             $table->string('id_layanan')->nullable();
-            $table->decimal('kuantitas', 2, 2);
+            $table->integer('kuantitas');
             $table->integer('total_biaya');
             $table->string('metode_pembayaran')->nullable();
             $table->string('status_pembayaran')->default('belum bayar');
+            $table->string('nama_customer');
             $table->timestamps();
 
             $table->foreign('id_layanan')->references('id_layanan')->on('layanan')->onDelete('restrict');

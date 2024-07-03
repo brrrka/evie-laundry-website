@@ -14,4 +14,11 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    
+        <div class="py-12">
+
+    
+                </div>
+            </div>
+        </div>
+    </x-app-layout>

@@ -12,7 +12,7 @@
                     <h4>
                         {{ __('Daftar Customer') }}
                     </h4>
-                    <a href="" class="btn btn-primary mb-1">Tambah Customer</a>
+                    <a href="{{ route('customer.create') }}" class="btn btn-primary mb-1">Tambah Customer</a>
                 </div>
                 @if (Session::has('success'))
                     <div class="alert alert-success" role="alert">
@@ -31,23 +31,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @forelse ($data as $staff) --}}
+                            @foreach ($data as $customer)
                                 <tr>
-                                    {{-- <td class="align-middle">{{ $staff->staff_id }}</td>
-                                    <td class="align-middle">{{ $staff->nama }}</td>
-                                    <td class="align-middle">{{ $staff->role }}</td>
+                                    <td class="align-middle">{{ $loop->iteration }}</td>
+                                    <td class="align-middle">{{ $customer->cust_id }}</td>
+                                    <td class="align-middle">{{ $customer->nama_customer }}</td>
+                                    <td class="align-middle">{{ $customer->alamat }}</td>
                                     <td class="align-middle">
                                         <div class="btn-group" role="group" aria-label="Basic Example">
-                                            <a href="{{ route('staff/edit', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-secondary">Edit</a>
-                                            <a href="{{ route('staff/delete', ['id'=>$staff->staff_id]) }}" type="button" class="btn btn-danger">Delete</a>
+                                            <a href="{{ route('customer.delete', ['id'=>$customer->cust_id]) }}" type="button" class="btn btn-danger">Delete</a>
                                         </div>
-                                    </td> --}}
+                                    </td>
+                                @endforeach
                                 </tr>
-                            {{-- @empty --}}
                                 <tr>
-                                    <td class="text-center" colspan="4">Staff Not Found</td>
                                 </tr>
-                            {{-- @endforelse --}}
                         </tbody>
                     </table>
                     {{-- {{ $data->links() }} --}}
